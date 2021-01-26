@@ -1,0 +1,13 @@
+html(lang='en' dir='ltr')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title cantrellnm
+    link(rel='shortcut icon', href='./favicon.svg')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')
+    link(rel='stylesheet', href='./css/style.css')
+  body
+    include includes/header.pug
+    include includes/section.pug
+    footer
+      small= `© Natalie Cantrell ${new Date().getFullYear()}`

@@ -1,0 +1,21 @@
+{
+  "name": "@cantrell/cantrell.github.io",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "html": "pug -P index.pug",
+    "css": "sass scss/style.scss css/style.css",
+    "watch:html": "watch \"yarn html\" includes",
+    "watch:css": "watch \"yarn css\" scss",
+    "dev": "concurrently \"yarn watch:html\" \"yarn watch:css\" \"yarn reload -b\"",
+    "build": "yarn html & yarn css"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "pug": "^3.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "reload": "^3.1.1",
+    "sass": "^1.32.5",
+    "watch": "^1.0.2"
+  }
+}

@@ -1,0 +1,33 @@
+section
+  .tabs
+    div
+      h1 cantrellnm
+  .json
+    dl
+      //- span.face
+      //-   dt face
+      //-   dd
+      //-     img(src='./images/face.png')
+      span
+        dt name
+        dd.name Natalie Cantrell
+      span
+        dt occupation
+        dd Web Developer
+    //- details(open)
+    //-   summary
+    //-     span about
+    //-   include about.pug
+    details(open)
+      summary
+        span projects
+      include projects.pug
+    dl
+      span
+        dt location
+        dd United States
+      span
+        dt contact
+        dd
+          | DMs open on 
+          a(href='https://twitter.com/messages/compose?recipient_id=2548466700') Twitter

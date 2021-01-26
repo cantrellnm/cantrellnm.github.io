@@ -1,0 +1,113 @@
+$arrow-width: 20px;
+$breakpoint: 700px;
+html {
+  --padding-xs: 10px;
+  --padding-s: 16px;
+  --padding-m: 24px;
+
+  --header-bg-color: #212121;
+  --section-bg-color: #2B2B2B;
+  --highlight-bg-color: #3a3a3a;
+
+  --primary-text-color: #cccccc;
+  --secondary-text-color: #606060;
+  --highlight-text-color: #ffffff;
+
+  --border-color: #000000;
+  --link-color: #adcce4;
+}
+
+body {
+  background-color: var(--section-bg-color);
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  color: var(--primary-text-color);
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  footer {
+    background-color: var(--header-bg-color);
+    padding: 0.3rem var(--padding-m);
+    border-top: 1px solid var(--border-color);
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+  }
+  @media (min-width: $breakpoint) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    overflow: hidden;
+    section {
+      max-height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      .json {
+        flex-grow: 1;
+        overflow-y: scroll;
+      }
+    }
+    footer {
+      justify-content: flex-end;
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  &::-webkit-scrollbar {
+    background-color: var(--section-bg-color);
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-bg-color);
+    border-radius: 5px;
+    border: 1px solid #111;
+  }
+}
+*:before, *:after {
+  color: var(--secondary-text-color);
+}
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease-out;
+  text-underline-offset: 0.1em;
+  &:hover, &:focus {
+    color: var(--highlight-text-color);
+  }
+}
+details {
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      padding-left: $arrow-width;
+    }
+  }
+}
+
+@mixin icon-before($content) {
+  &:before {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    position: relative;
+    top: 0.3em;
+    content: $content;
+    margin-right: 0.3em;
+  }
+}
+
+@import 'header';
+@import 'section';

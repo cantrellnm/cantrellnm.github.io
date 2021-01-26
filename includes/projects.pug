@@ -1,0 +1,41 @@
+include mixins.pug
+-
+  var projects = [
+    {
+      name: 'yoursmartbudget',
+      url: 'https://github.com/cantrellnm/yoursmartbudget',
+      image: './images/ysb-overview.png',
+      summary: 'Personal budgeting app that fetches balance/transaction information through Plaid.',
+      toolkit: ['react', 'redux', 'oauth', 'plaid', 'node', 'express', 'mongodb']
+    },
+    {
+      name: 'waniconjugation',
+      url: 'https://waniconjugation.herokuapp.com',
+      image: './images/waniconjugation.png',
+      summary: 'Practice conjugating Japanese verbs & adjectives with vocabulary from WaniKani.',
+      toolkit: ['angular', 'node', 'express', 'mongodb', 'pug', 'sass']
+    },
+    {
+      name: 'draw-hanzi',
+      url: 'https://draw-hanzi.herokuapp.com',
+      image: './images/drawhanzi.png',
+      summary: 'Practice writing Chinese hanzi from curated or custom lists.',
+      toolkit: ['bootstrap', 'jquery', 'oauth', 'node', 'express', 'mongodb', 'pug', 'sass']
+    },
+    {
+      name: 'draw-kanji',
+      url: 'https://draw-kanji.herokuapp.com',
+      image: './images/drawkanji.png',
+      summary: 'Practice writing Japanese kanji from curated or custom lists.',
+      toolkit: ['rails', 'ruby', 'postgres', 'haml', 'sass', 'canvas']
+    }
+  ];
+ul
+  li
+    dl
+      each project in projects
+        details(open='true').project
+          summary
+            span
+              a(href=project.url)= project.name
+          +printproject(project)

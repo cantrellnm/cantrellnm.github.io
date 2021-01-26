@@ -1,0 +1,92 @@
+-
+  var tools = {
+    react: {
+      name: 'React',
+      url: 'https://reactjs.org/'
+    },
+    angular: {
+      name: 'Angular',
+      url: 'https://angular.io/'
+    },
+    redux: {
+      name: 'Redux',
+      url: 'https://redux.js.org/'
+    },
+    oauth: {
+      name: 'OAuth',
+      url: 'https://tools.ietf.org/html/rfc6749'
+    },
+    node: {
+      name: 'Node.js',
+      url: 'https://nodejs.org/'
+    },
+    express: {
+      name: 'Express',
+      url: 'https://expressjs.com/'
+    },
+    mongodb: {
+      name: 'MonogoDB',
+      url: 'https://www.mongodb.com/'
+    },
+    pug: {
+      name: 'Pug',
+      url: 'https://pugjs.org/'
+    },
+    sass: {
+      name: 'Sass',
+      url: 'https://sass-lang.com/'
+    },
+    rails: {
+      name: 'Ruby on Rails',
+      url: 'https://rubyonrails.org/'
+    },
+    ruby: {
+      name: 'Ruby',
+      url: 'https://www.ruby-lang.org/en/'
+    },
+    postgres: {
+      name: 'PostgreSQL',
+      url: 'https://www.postgresql.org/'
+    },
+    haml: {
+      name: 'Haml',
+      url: 'https://haml.info/'
+    },
+    canvas: {
+      name: 'HTML Canvas',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API'
+    },
+    plaid: {
+      name: 'Plaid API',
+      url: 'https://plaid.com/'
+    },
+    bootstrap: {
+      name: 'Bootstrap',
+      url: 'https://getbootstrap.com/'
+    },
+    jquery: {
+      name: 'jQuery',
+      url: 'https://jquery.com/'
+    }
+  }
+
+mixin printproject(proj)
+  dl
+    if proj.image
+      span
+        dt screenshot
+        dd.screenshot
+          img(src=proj.image)
+    span
+      dt purpose
+      dd= proj.summary
+    span
+      dt toolkit
+      dd.toolkit
+        +printtools(proj.toolkit)
+      
+mixin printtools(toolkit)
+  ul
+    each tool in toolkit
+      li
+        a(href=tools[tool].url)= tools[tool].name
