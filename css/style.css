@@ -321,21 +321,21 @@ span.face dd img {
   margin-right: 0.1em;
 }
 .json details summary > span:after {
-  content: '": [';
+  content: '": {';
   margin-left: 0.1em;
 }
 .json details[open]:after {
-  content: "],";
+  content: "},";
   margin-left: 20px;
 }
 .json details:last-child[open]:after {
-  content: "]";
+  content: "}";
 }
 .json details:not([open]) summary > span:after {
-  content: ": [...],";
+  content: ": {...},";
 }
 .json details:last-child:not([open]) summary > span:after {
-  content: ": [...]";
+  content: ": {...}";
 }
 .json details ul li {
   padding-left: 40px;

@@ -120,17 +120,17 @@ span.face {
       margin-right: 0.1em;
     }
     & > span:after {
-      content: '": [';
+      content: '": {';
       margin-left: 0.1em;
     }
   }
   &[open]:after {
-    content: '],';
+    content: '},';
     margin-left: $arrow-width;
   }
-  &:last-child[open]:after {content: ']';}
-  &:not([open]) summary > span:after {content: ": [...],"}
-  &:last-child:not([open]) summary > span:after {content: ": [...]"}
+  &:last-child[open]:after {content: '}';}
+  &:not([open]) summary > span:after {content: ": {...},"}
+  &:last-child:not([open]) summary > span:after {content: ": {...}"}
   ul li {
     padding-left: $arrow-width * 2;
   }
